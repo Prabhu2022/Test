@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+<meta charset="ISO-8859-1">
+<title>Welcome Page</title>
+<link rel="stylesheet" type="text/css" href= "/webjars/bootstrap/css/bootsrap.min.css" />
+</head>
+<body>
+<div align="Left">
+
+			<div align="center">
+			<a th:href="@{/register}">Register</a>
+			<a th:href="@{/list_users}">View Details</a>
+			</div>
+			<div align="center">
+			
+				<h3>
+					<b>HELLO, WELCOME TO STUDENT MANAGEMENT SYSTEM </b>
+					
+				</h3>
+			</div>
+		</div>
+
+</body>
+</html>

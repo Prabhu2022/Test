@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+<meta charset="ISO-8859-1">
+<title>Welcome Page</title>
+<link href="css2.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div class="wrapper fadeInDown">
+		<div id="formContent">
+			<!-- Tabs Titles -->
+			<h2 class="active">SignUp</h2>
+
+			<h2>
+				<a class="underlineHover" href="index.jsp">Login</a>
+			</h2>
+			<!-- Icon -->
+			<div class="fadeIn first">
+				<img src="user.jpg" id="icon" alt="User Icon" class="user" />
+			</div>
+			<div align="center">
+				<form  th:action="@{/processRegister}" method="post" th:object="${register}">
+					<table>
+					
+						<tr>
+
+							<td><input type="text" id="UserEmail" class="fadeIn third"
+								name="UserEmail" placeholder="UserEmail"
+								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+								title="Enter Valid Email id" th:field="*{email}" required></td>
+						</tr>
+						
+						<tr>
+
+							<td><input type="password" id="Password"
+								class="fadeIn third" name="UserPass" placeholder="Password"
+								size="25" maxlength="10" minlength="6"
+								title="Password has 6-10 characters" th:field="*{password}" required></td>
+						</tr>
+						
+						<tr>
+
+							<td><input type="text" id="firtName" class="fadeIn third"
+								name="firtName" placeholder="FirtName" 
+								title="Enter Valid firtName" th:field="*{firtName}" required></td>
+						</tr>
+
+						<tr>
+
+							<td><input type="text" id="lastName" class="fadeIn third"
+								name="lastName" placeholder="LastName" 
+								title="Enter Valid lastName" th:field="*{lastName}" required></td>
+						</tr>
+
+						<tr align="center">
+
+							<td><input type="submit" class="fadeIn fourth"
+								value="SignUp" onclick="return Validate()"></td>
+						</tr>
+					</table>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

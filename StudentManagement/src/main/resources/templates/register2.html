@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+<meta charset="ISO-8859-1">
+<title>Welcome Page</title>
+<link href="css2.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div class="wrapper fadeInDown">
+		<div id="formContent">
+			
+			<div align="center">
+			<h3>STUDENT MANAGEMENT SYSTEM</h3>
+			<h4>ENTER STUDENT DETAILS </h4>
+				<form  th:action="@{/processRegister}" method="post" th:object="${register}">
+					<table>					
+						<tr>							
+							<td><input type="text" id="studentName" class="fadeIn third"
+								name="studentName" placeholder="StudentName" maxlength="15" minlength="3"
+								title="Enter Valid firtName" required></td>							
+						</tr>						
+						<tr>
+							<td><input type="text" id="mobileNumber"
+								class="fadeIn third" name="mobileNumber" placeholder="MobileNumber"
+								pattern=".{10}"
+								title="Enter Valid Mob No" required></td>
+						</tr>						
+						<tr>
+							<td><input type="text" id="address" class="fadeIn third"
+								name="address" placeholder="Address" maxlength="25" minlength="5"
+								title="Enter Valid Address" required></td>
+						</tr>
+						<tr align="center">
+
+							<td><input type="submit" class="fadeIn fourth"
+								value="Submit"></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

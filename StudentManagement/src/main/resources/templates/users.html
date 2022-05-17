@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function preventBack() {
+		window.history.forward();
+	}
+	setTimeout("preventBack()", 0);
+	window.onunload = function() {
+		null
+	};
+</script>
+<meta charset="ISO-8859-1">
+<title>Welcome Page</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootsrap.min.css" />
+</head>
+<body>
+	<div align="center">
+
+		<h3>
+			<b>STUDENT DATABASE </b>
+
+		</h3>
+	</div>
+	<div align="center">
+		<table class="table table-striped table-bordered">
+			<thead class="thead-dark">
+
+				<tr>
+					<th>User Id</th>
+					<th>StudentName</th>
+					<th>MobileNumber</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr each="student: ${listUsers}">
+					<td text="${student.id}">User Id</td>
+					<td text="${student.studentName}">StudentName</td>
+					<td text="${student.mobileNumber}">MobileNumber</td>
+					<td text="${student.address}">Address</td>
+					</tr>
+					</tbody>
+					</table>				
+			</div>
+</body>
+</html>
